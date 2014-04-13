@@ -1,0 +1,27 @@
+def did_win(player)
+  wins = [[[1,1],[1,2],[1,3]], [[2,1],[2,2],[2,3]], [[3,1],[3,2],[3,3]],
+  [[1,1],[2,1],[3,1]], [[1,2],[2,2],[3,2]], [[1,3],[2,3],[3,3]],
+  [[1,1],[2,2],[3,3]], [[3,1],[2,2],[1,3]]]
+
+  in_row = 0
+
+  winner = false
+
+  wins.each do |space|
+    in_row = 0
+    space.each do |space_coord|
+      player.each do |player_coord|
+        if space_coord == player_coord
+          in_row += 1
+        end
+      end
+      if in_row === 3
+        winner = true
+      end
+    end
+  end
+  puts winner
+end
+
+did_win([[1,2],[2,2],[1,3]])
+
